@@ -1,0 +1,85 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		
+			
+        /*
+			transform:translateX();         x轴平移
+			transform: translateY();        y轴平移
+		    transform:translateZ();         z轴平移
+		    transform:rotateX();            x轴旋转
+		    transform:rotateY();            y轴旋转
+		    transform:rotateZ();            z轴旋转
+		
+			
+			transition:all 3s;              过度元素，all选择所有的属性，3s动作持续3秒
+		*/
+ 
+ 
+		ul{
+			list-style: none;
+			margin: 150px auto;
+			padding: 0px;
+			width: 200px;
+			height: 200px;
+			position: relative;
+			transform: rotateX(45deg) rotateY(45deg);/*以x，y轴旋转45度观测便于构造模型（旋转都是以顺时针，用谷歌浏览器调试，在脑海中建立空间图形）*/
+			/*可以删除，删除后以平面展示*/
+			transform-style: preserve-3d;/*给子元素添加3d效果，建3d模型必须要写的*/
+		}
+		ul li{
+			width: 200px;
+			height: 200px;
+			position: absolute;
+			top: 0px;
+		    left:0px;
+		}
+		ul li:nth-child(1){
+			text-align: center;
+			transform: rotateX(0deg) rotateY(0deg) translateX(0px) translateY(0px) translateZ(100px);/*这个我写的有点多余了，是因为在网页中调试用的，可以删除没有用到的*/
+			background-color: rgba(255,0,0,0.5);
+		}
+		ul li:nth-child(2){
+			transform: rotateX(0deg) rotateY(90deg) translateX(0px) translateY(0px)translateZ(-100px);
+			background-color: rgba(0,255,0,0.5);
+		}
+		ul li:nth-child(3){
+			transform: rotateX(90deg) rotateY(0deg) translateX(0px) translateY(0px) translateZ(100px);
+			background-color: rgba(255,0,255,0.5);
+		}
+		ul li:nth-child(4){
+			transform: rotateX(90deg) rotateY(0deg) translateX(0px) translateY(0px) translateZ(-100px);
+			background-color: rgba(255,255,0,0.5);
+		}
+		ul li:nth-child(5){
+			transform: rotateX(0deg) rotateY(90deg) translateX(0px) translateY(0px) translateZ(100px);
+			background-color: rgba(255,0,255,0.5);
+		}
+		ul li:nth-child(6){
+			transform: rotateX(0deg) rotateY(0deg) translateX(0px) translateY(0px) translateZ(-100px);
+			background-color: rgba(0,255,255,0.5);
+		}
+		ul:hover{
+			transform: rotateX(360deg) rotateY(360deg);
+			transition: all 5s;   /*过度元素*/
+		}
+	</style>
+</head>
+<body>
+	<ul>
+		<li>1</li>
+		<li>2</li>
+		<li>3</li>
+		<li>4</li>
+		<li>5</li>
+		<li>6</li> 
+	</ul>
+</body>
+</html>
+————————————————
+版权声明：本文为CSDN博主「lzj_love_wx」的原创文章，遵循 CC 4.0 BY-SA 版权协议，转载请附上原文出处链接及本声明。
+原文链接：https://blog.csdn.net/lzj_love_wx/article/details/97496060
